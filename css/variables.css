@@ -1,0 +1,77 @@
+:root {
+  --bg: #f7fffe;
+  --surface: rgba(255, 255, 255, 0.68);
+  --surface-strong: rgba(255, 255, 255, 0.84);
+  --text: #103b39;
+  --muted: #5d7c78;
+  --primary: #2ec4b6;
+  --primary-deep: #0f766e;
+  --primary-soft: #dffcf8;
+  --accent: #d8b46a;
+  --border: rgba(16, 59, 57, 0.08);
+  --shadow: 0 20px 60px rgba(12, 50, 48, 0.12);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --container: min(1120px, calc(100vw - 32px));
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+* { box-sizing: border-box; }
+html { 
+  scroll-behavior: smooth; 
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+body.no-scroll { overflow: hidden; }
+button, input, textarea { font: inherit; }
+img { max-width: 100%; display: block; }
+.hidden { display: none !important; }
+.glass-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.primary-button, .secondary-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 28px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease);
+}
+.primary-button { background: linear-gradient(135deg, var(--primary), var(--primary-deep)); color: #fff; }
+.secondary-button { background: rgba(255,255,255,.22); color: var(--text); border: 1px solid var(--border); }
+.primary-button:hover, .secondary-button:hover { transform: translateY(-2px); }
+.scene {
+  min-height: 100svh;
+  padding: 96px 0;
+  position: relative;
+}
+.scene__content, .section-heading, .timeline-list, .gallery-grid, .counter-grid, .future-list, .countdown-shell, .reasons-shell {
+  width: var(--container);
+  margin: 0 auto;
+}
+.chapter-label {
+  display: inline-flex;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.55);
+  color: var(--primary-deep);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 12px;
+}

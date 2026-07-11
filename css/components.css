@@ -1,0 +1,119 @@
+/* Music Widget */
+.music-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .4s var(--ease);
+}
+.music-widget:hover { transform: scale(1.05); }
+.music-widget__icon { font-size: 1.5rem; }
+.music-widget__meta { display: flex; flex-direction: column; }
+.music-widget__meta strong { font-size: 0.9em; }
+.music-widget__meta span { font-size: 0.75em; color: var(--muted); }
+
+/* Story Progress Tracker */
+.story-progress {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  z-index: 100;
+  padding: 20px 12px;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.story-progress__chapter {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  writing-mode: vertical-rl;
+  font-weight: 600;
+}
+.story-progress__track {
+  width: 4px;
+  height: 150px;
+  background: var(--border);
+  border-radius: 2px;
+  position: relative;
+}
+.story-progress__track::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--progress, 0%);
+  background: var(--primary);
+  border-radius: 2px;
+  transition: height .4s var(--ease);
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .5s ease;
+}
+.preloader__heart {
+  font-size: 4rem;
+  color: var(--primary);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Cursor Glow */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(46, 196, 182, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen;
+  transition: transform .1s ease-out;
+}
+
+/* Mute Toggle */
+.mute-toggle {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  z-index: 100;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+/* Manual Start Widget */
+.manual-music {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  padding: 40px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+}
+.manual-music p { margin-bottom: 20px; font-weight: 500; }
