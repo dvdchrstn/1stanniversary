@@ -21,14 +21,14 @@ window.ANNIVERSARY_CONFIG = {
   texts: {
     preloader: 'sabarrrrrrr, loading dulu seng',
     openingTitle: 'Happy 1st Anniversary, sayanggg!!!',
-    openingSubtitle: 'I made something special just for you.',
+    openingSubtitle: 'I made something special just for youuuu sayaanggggggg!!!!!.',
     openingButton: 'Open Our Story',
-    beginStory: 'Let’s begin our story',
+    beginStory: 'oke lanjottttt,,',
     heroTitle: 'One Whole Year With You',
-    heroSubtitle: 'A journey of little moments, soft smiles, and endless reasons to stay.',
+    // heroSubtitle: 'A journey of little moments, soft smiles, and endless reasons to stay.',
     chapterBadgePrefix: 'Chapter',
     endingTitle: 'Thank You',
-    endingSubtitle: 'I Love You Today, Tomorrow, Forever',
+    // endingSubtitle: 'I Love You Today, Tomorrow, Forever',
     endingQuestion: 'Will you stay for another year?',
     replayButton: 'Replay Story'
   },
@@ -37,14 +37,14 @@ window.ANNIVERSARY_CONFIG = {
     { title: 'How We Met', label: 'Chapter 1', hint: 'The first hello that changed everything.' },
     { title: 'Our Favorite Memories', label: 'Chapter 2', hint: 'Little moments we keep coming back to.' },
     { title: 'Things I Love About You', label: 'Chapter 3', hint: 'The reasons my heart keeps choosing you.' },
-    { title: 'Our Future', label: 'Chapter 4', hint: 'Dreams we can reach together.' },
+    { title: 'Our Future', label: 'Chapter 4', hint: '' },
     { title: 'Forever', label: 'Ending', hint: 'A promise wrapped in one more beginning.' }
   ],
   timeline: [
-    { date: '2025-03-07', dateLabel: '7 Maret 2025', title: 'Pertama Kali Bertemu', description: 'Pertama kali bertemu dan berkenalan, awal dari segalanya.', image: 'assets/images/first hello.jpeg' },
-    { date: '2025-05-12', dateLabel: '12 Mei 2025', title: 'Jadian', description: 'Tanggal spesial kita resmi bersama.', image: 'assets/images/WhatsApp Image 2026-07-11 at 10.36.42 PM.jpeg', video: 'assets/images/PertamaJadian.mp4' },
-    { date: '2025-11-12', dateLabel: '12 November 2025', title: '6 Bulan Pacaran', description: 'Setengah tahun penuh cinta dan kebahagiaan.', image: 'assets/images/WhatsApp Image 2026-07-11 at 10.37.24 PM.jpeg' },
-    { date: '2026-05-12', dateLabel: '12 Mei 2026', title: '1 Year Anniversary', description: 'Setahun bersama, dan masih terus berjalan.', image: 'assets/images/WhatsApp Image 2026-07-11 at 10.36.42 PM.jpeg' }
+    { date: '2025-03-07', dateLabel: '7 Maret 2025', title: 'Pertama Kali Bertemu', description: '', image: 'assets/images/first hello.jpeg' },
+    { date: '2025-05-12', dateLabel: '12 Mei 2025', title: 'Jadian', description: '', image: 'assets/images/WhatsApp Image 2026-07-11 at 10.36.42 PM.jpeg', video: 'assets/images/PertamaJadian.mp4' },
+    { date: '2025-11-12', dateLabel: '12 November 2025', title: '6 Bulan Pacaran', description: '', image: 'assets/images/WhatsApp Image 2026-07-11 at 10.37.24 PM.jpeg' },
+    { date: '2026-05-12', dateLabel: '12 Mei 2026', title: '1 Year Anniversary', description: '', image: 'assets/images/WhatsApp Image 2026-07-11 at 10.36.42 PM.jpeg' }
   ],
   gallery: [
     { src: 'assets/images/WhatsApp Image 2026-07-11 at 10.36.43 PM (1).jpeg', caption: 'A day that felt like home.', date: '2025-07-18' },
