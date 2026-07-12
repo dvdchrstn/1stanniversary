@@ -90,7 +90,7 @@
   pointer-events: none;
   z-index: 0;
   mix-blend-mode: screen;
-  transition: transform .1s ease-out;
+  transition: transform .1s ease-out, opacity .3s ease;
 }
 
 /* Mute Toggle */

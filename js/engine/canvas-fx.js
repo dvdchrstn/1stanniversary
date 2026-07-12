@@ -4,9 +4,12 @@ export function initCanvas() {
   const cursorGlow = document.querySelector('.cursor-glow');
   
   let particles = [];
+  let particlePool = [];
   let mouseX = 0;
   let mouseY = 0;
   let currentWeather = 'glow';
+  let animationFrameId;
+  let isTabActive = true;
   
   function resize() {
     canvas.width = window.innerWidth;
@@ -15,6 +18,18 @@ export function initCanvas() {
   
   resize();
   window.addEventListener('resize', resize);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isTabActive = false;
+      stopAnimation();
+      if (cursorGlow) cursorGlow.style.opacity = '0';
+    } else {
+      isTabActive = true;
+      startAnimation();
+      if (cursorGlow) cursorGlow.style.opacity = '1';
+    }
+  });
   
   // Cursor tracking
   document.addEventListener('mousemove', (e) => {
@@ -28,7 +43,26 @@ export function initCanvas() {
   
   // Particle class
   class Particle {
-    constructor(type) {
+    constructor() {
+      this.reset();
+    }
+
+    reset() {
+      this.type = 'glow';
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = 0;
+      this.speedY = 0;
+      this.speedX = 0;
+      this.opacity = 0;
+      this.color = 'rgba(0,0,0,0)';
+      this.rotation = 0;
+      this.rotationSpeed = 0;
+      this.active = false;
+    }
+
+    init(type) {
+      this.active = true;
       this.type = type;
       this.x = Math.random() * canvas.width;
       this.y = type === 'confetti' ? -20 : Math.random() * canvas.height;
@@ -56,23 +90,29 @@ export function initCanvas() {
     }
     
     update() {
+      if (!this.active) return;
+
       this.y += this.speedY;
       this.x += this.speedX;
       this.rotation += this.rotationSpeed;
       
       if (this.y > canvas.height + 20) {
-        this.y = -20;
-        this.x = Math.random() * canvas.width;
+        this.recycle();
       }
       
-      if (this.x > canvas.width + 20) {
-        this.x = -20;
-      } else if (this.x < -20) {
-        this.x = canvas.width + 20;
+      if (this.x > canvas.width + 20 || this.x < -20) {
+        this.recycle();
       }
+    }
+
+    recycle() {
+      this.reset();
+      particlePool.push(this);
     }
     
     draw() {
+      if (!this.active) return;
+
       ctx.save();
       ctx.translate(this.x, this.y);
       ctx.rotate(this.rotation * Math.PI / 180);
@@ -116,26 +156,62 @@ export function initCanvas() {
   }
   
   function createParticles(type, count = 30) {
+    // Return existing particles to the pool
+    particles.forEach(p => p.recycle());
     particles = [];
-    for (let i = 0; i < count; i++) {
-      particles.push(new Particle(type));
+
+    let needed = count;
+    for (let i = 0; i < needed; i++) {
+      let p = particlePool.pop();
+      if (p) {
+        p.init(type);
+      } else {
+        p = new Particle();
+        p.init(type);
+      }
+      particles.push(p);
     }
   }
   
   function animate() {
+    if (!isTabActive) return;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
+    particles = particles.filter(p => p.active);
+
     particles.forEach(particle => {
       particle.update();
       particle.draw();
     });
-    
-    requestAnimationFrame(animate);
+
+    if (particles.length < 20) {
+      let p = particlePool.pop();
+      if (p) {
+        p.init(currentWeather);
+        particles.push(p);
+      }
+    }
+
+    animationFrameId = requestAnimationFrame(animate);
+  }
+  
+  function startAnimation() {
+    if (!animationFrameId) {
+      animate();
+    }
+  }
+
+  function stopAnimation() {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
   }
   
   // Initialize with default weather
   createParticles('glow', 20);
-  animate();
+  startAnimation();
   
   // Listen for weather changes
   const observer = new IntersectionObserver((entries) => {
@@ -171,4 +247,6 @@ export function initCanvas() {
   
   // Expose weather update globally
   window.updateWeather = updateWeather;
+  window.startCanvasAnimation = startAnimation;
+  window.stopCanvasAnimation = stopAnimation;
 }
