@@ -27,7 +27,7 @@ window.ANNIVERSARY_CONFIG = {
     heroTitle: 'One Whole Year With You',
     // heroSubtitle: 'A journey of little moments, soft smiles, and endless reasons to stay.',
     chapterBadgePrefix: 'Chapter',
-    endingTitle: 'Thank You',
+    endingTitle: 'Happy Anniversary, Sayangggg!!!',
     // endingSubtitle: 'I Love You Today, Tomorrow, Forever',
     endingQuestion: 'Will you stay for another year?',
     replayButton: 'Replay Story'
@@ -36,7 +36,7 @@ window.ANNIVERSARY_CONFIG = {
     { title: 'Beginning', label: 'Opening', hint: 'A small spark that started everything.' },
     { title: 'How We Met', label: 'Chapter 1', hint: 'The first hello that changed everything.' },
     { title: 'Our Favorite Memories', label: 'Chapter 2', hint: 'Little moments we keep coming back to.' },
-    { title: 'Things I Love About You', label: 'Chapter 3', hint: 'The reasons my heart keeps choosing you.' },
+    { title: 'ini ceritanya surat gitu hehehehek', label: 'Chapter 3', hint: 'The reasons my heart keeps choosing you.' },
     { title: 'Our Future', label: 'Chapter 4', hint: '' },
     { title: 'Forever', label: 'Ending', hint: 'A promise wrapped in one more beginning.' }
   ],
@@ -55,7 +55,7 @@ window.ANNIVERSARY_CONFIG = {
     { src: 'assets/images/WhatsApp Image 2026-07-11 at 10.36.44 PM (2).jpeg', caption: 'One frame, a thousand feelings.', date: '2026-07-10' }
   ],
   loveLetter: {
-    title: 'A Letter For You',
+    title: 'angjayy, ini ceritanya surat gitu hehe',
     body: 'hai sayangg, happy anniversayyy yaaaa yeayyy ga nyangka udah setahun aja kita pacarann. 🤍\n\nSetahun ini rasanya cepet banget ya, padahal kalau diinget-inget kita udah ngelewatin banyak hal bareng. Ada hari-hari yang isinya ketawa terus, ada juga hari yang bikin capek atau sedih, tapi aku bersyukur karena kita selalu milih buat tetap jalan bareng.\n\nMakasih ya sayang, udah jadi rumah yang selalu bikin aku ngerasa tenang. Makasih udah sabar ngadepin segala kurangku, makasih udah selalu percaya sama aku, dan makasih karena setiap usaha kecil maupun besar yang kamu lakuin selalu bikin aku ngerasa dicintai.\n\nAku juga berharap semua mimpi kita, yang ada kamu di dalam mimpiku dan ada aku di dalam mimpimu, pelan-pelan bisa kita wujudin satu per satu di waktu yang paling baik. Semoga kita selalu dikasih kesehatan, kebahagiaan, dan kekuatan buat terus saling milih setiap harinya.\n\nAku mungkin belum jadi pasangan yang sempurna, tapi aku akan terus belajar jadi seseorang yang bisa bikin kamu bahagia, merasa aman, dan bangga punya aku. Aku pengen terus nemenin kamu tumbuh, dengerin semua cerita kamu, ngerayain semua pencapaian kamu, dan ada di samping kamu di setiap prosesnya.\n\nTerima kasih karena udah hadir di hidup aku. Terima kasih udah bikin satu tahun ini jadi tahun yang penuh warna. Semoga anniversary ini bukan cuma yang pertama, tapi jadi awal dari banyak anniversary lain yang bakal kita rayain bareng.\n\nAku sayang banget sama kamu, lebih dari yang bisa aku ungkapin lewat kata-kata. Happy first anniversary, sayangku. Semoga kita selalu "kita". 🤍🤍🤍'
   },
   reasons: [
