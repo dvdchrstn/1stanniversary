@@ -103,15 +103,6 @@ export function initAudio() {
     muteToggle.style.opacity = isMuted ? '0.5' : '1';
   });
   
-  // Listen for letter open/close to fade music
-  document.addEventListener('letterOpened', () => {
-    fadeOutBGM(0.8);
-  });
-  
-  document.addEventListener('letterClosed', () => {
-    fadeInBGM(0.8);
-  });
-  
   // Create dummy audio elements for SFX if urls exist
   if (config.music.sfx.click) {
     sfxClick.src = config.music.sfx.click;
